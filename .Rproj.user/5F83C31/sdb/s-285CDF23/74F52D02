@@ -1,0 +1,18 @@
+{
+    "contents" : "\n# Create a connection with the website\ncon <- url(\"https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/\")\n\n# Import the text with readLines\npage1 <- readLines(con)\n\n# Close the connection\nclose(con)\n\npage1\n",
+    "created" : 1461251786910.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2144032529",
+    "id" : "74F52D02",
+    "lastKnownWriteTime" : 1461252352,
+    "path" : "C:/Users/MaurizioLocale/OneDrive/Data_Science/3_Getting_Cleaning_Data/Web_scraping/readLines.R",
+    "project_path" : "readLines.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
