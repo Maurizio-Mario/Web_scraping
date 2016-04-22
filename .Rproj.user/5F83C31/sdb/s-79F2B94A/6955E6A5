@@ -1,0 +1,17 @@
+{
+    "contents" : "library(tm)\ntxt <- system.file(\"texts\", \"txt\", package = \"tm\")\ntxt\novid <- VCorpus(DirSource(txt, encoding = \"UTF-8\"), readerControl = list(language = \"lat\"))\novid\n\ndocs <- c(\"This is a text.\", \"This another one.\")\nVCorpus(VectorSource(docs))\n\nreut21578 <- system.file(\"texts\", \"crude\", package = \"tm\")\nreuters <- VCorpus(DirSource(reut21578), readerControl = list(reader = readReut21578XMLasPlain))\n\n#Print\ninspect(ovid[1:2])\nmeta(ovid[[2]], \"id\")\n\n# Output text\nwriteLines(as.character(ovid[[2]]))\nlapply(ovid, as.character)\nwhich.max(lengths(lapply(ovid, as.character)))\n\n# ELiminate extra withespace\n\nreuters <- tm_map(reuters, stripWhitespace)\n\n# Convert to lowercase\n\nreuters <- tm_map(reuters, content_transformer(tolower))\n\n# Remove stopwords\n\nreuters <- tm_map(reuters, removeWords, stopwords(\"english\"))\n\n# Stemming (finding words base form)\n\ntm_map(reuters, stemDocument)\n\n# Filters\n\nidx <- meta(reuters, \"id\") == '237' & meta(reuters, \"heading\") == 'INDONESIA SEEN AT CROSSROADS OVER ECONOMIC CHANGE'\nreuters[idx]\n\n# Metadata management\n\nDublinCore(crude[[1]], \"Creator\") <- \"Ano Nymous\"\nmeta(crude[[1]])\n\n",
+    "created" : 1461315349231.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3860863096",
+    "id" : "6955E6A5",
+    "lastKnownWriteTime" : 1461179545,
+    "path" : "C:/Users/MaurizioLocale/OneDrive/Data_Science/10_Capstone_project/CP_Natural_Language/commands.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

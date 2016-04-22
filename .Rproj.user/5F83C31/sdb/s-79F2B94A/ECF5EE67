@@ -1,0 +1,18 @@
+{
+    "contents" : "library(RCurl)\nlibrary(XML)\nurl <- \"https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/\"\n\ndata1 <- getURL(url)\npage1 <- xmlParse(data1)\n\npage1 <- htmlTreeParse(url, useInternalNodes = TRUE)\n\nrootNode <- xmlRoot(page1)\nxmlName(rootNode)\na <- rootNode[[1]][[1]]\na\n",
+    "created" : 1461258017474.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "313874266",
+    "id" : "ECF5EE67",
+    "lastKnownWriteTime" : 1461273833,
+    "path" : "C:/Users/MaurizioLocale/OneDrive/Data_Science/3_Getting_Cleaning_Data/Web_scraping/xml.R",
+    "project_path" : "xml.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

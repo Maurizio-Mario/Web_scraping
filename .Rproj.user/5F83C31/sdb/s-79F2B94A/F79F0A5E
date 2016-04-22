@@ -1,0 +1,18 @@
+{
+    "contents" : "library(rvest)\nlego_movie <- read_html(\"http://www.imdb.com/title/tt1490017/\")\nlego_movie %>% \n    html_node(\"strong span\") %>%\n    html_text() %>%\n    as.numeric()\n\nlego_movie %>%\n    html_nodes(\"#titleCast .itemprop span\") %>%\n    html_text()\n\nlego_movie %>%\n    html_nodes(\"#titleStoryLine p\") %>%\n    html_text()\n\nlego_movie %>%\n    html_nodes(\"table\") %>%\n    .[[3]] %>%\n    html_table()\n\n \n",
+    "created" : 1461269321296.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "709078740",
+    "id" : "F79F0A5E",
+    "lastKnownWriteTime" : 1461308517,
+    "path" : "C:/Users/MaurizioLocale/OneDrive/Data_Science/3_Getting_Cleaning_Data/Web_scraping/rvest.R",
+    "project_path" : "rvest.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
